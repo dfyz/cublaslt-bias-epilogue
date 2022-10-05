@@ -1,7 +1,8 @@
 This is a standalone program that only needs a CUDA installation to reproduce the problem.
 
-  * The issue was first detected in CUDA 11.4, but earlier versions are possibly also affected.
+  * The issue was first detected in CUDA 11.4, but versions as early as CUDA 11.1 also seem to be affected.
   * The issue can also be reproduced in `nvidia-docker` (tested with `nvidia/cuda:11.7.0-devel-ubuntu18.04`).
+  * The issue can be reproduced with **GeForce GTX 1080Ti**, **GeForce RTX 2080**, and **Tesla V100** GPUs (and possibly others), but **not** with **A100**.
 
 To reproduce, compile the program with CUDA 11.8 (11.8 is the latest version as of right now, but any other version supporting fp32 bias epilogue should work):
 ```
