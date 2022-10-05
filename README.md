@@ -3,9 +3,9 @@ This is a standalone program that only needs a CUDA installation to reproduce th
   * The issue was first detected in CUDA 11.4, but earlier versions are possibly also affected.
   * The issue can also be reproduced in `nvidia-docker` (tested with `nvidia/cuda:11.7.0-devel-ubuntu18.04`).
 
-Use the following command to compile the program with CUDA 11.8 (the latest version as of right now):
+To reproduce, compile the program with CUDA 11.8 (11.8 is the latest version as of right now, but any other version supporting fp32 bias epilogue should work):
 ```
-$ /usr/local/cuda-11.8/bin/nvcc -O2 test_cublaslt.cpp -o test_cublaslt -l cublasLt
+$ make CUDA_VERSION=11.8
 ```
 
 An example of parameters that trigger the problem:
